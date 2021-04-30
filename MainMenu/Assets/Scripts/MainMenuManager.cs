@@ -5,10 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
-    [SerializeField] private bool shouldShowOptionButton = true;
+    [Header("Toggles")]
+    [SerializeField] private bool shouldShowOption = true;
+    [SerializeField] private bool shouldGraphicsOptions = true;
+    [SerializeField] private bool shouldAudioOptions = true;
+    [Header("Main Menu")]
     [SerializeField] private GameObject OptionsButton = null;
     [SerializeField] private GameObject optionsScreen = null;
     [SerializeField] private string levelToLoad = "";
+    [Header("Options Menu")]
+    [SerializeField] private GameObject graphicsLabel = null;
+    [SerializeField] private GameObject graphicsOptions = null;
+    [SerializeField] private GameObject graphicsApplyButton = null;
+    [SerializeField] private GameObject audioLabel = null;
+    [SerializeField] private GameObject audioOptions = null;
     
     // Start is called before the first frame update
     void Start()
@@ -25,10 +35,12 @@ public class MainMenuManager : MonoBehaviour
 
     private void ShowGameObjects()
     {
-        if (shouldShowOptionButton == false)
-        {
-            OptionsButton.SetActive(false);
-        }
+        OptionsButton.SetActive(shouldShowOption);
+        graphicsLabel.SetActive(shouldGraphicsOptions);
+        graphicsOptions.SetActive(shouldGraphicsOptions);
+        graphicsApplyButton.SetActive(shouldGraphicsOptions);
+        audioLabel.SetActive(shouldAudioOptions);
+        audioOptions.SetActive(shouldAudioOptions);
     }
 
     public void StartGame()
