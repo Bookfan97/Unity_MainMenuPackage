@@ -1764,7 +1764,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1041620275418154781, guid: d9a21ff2621b7cb4fafc13732a9cf91a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenOptionsMenu
+      value: ApplyGraphics
       objectReference: {fileID: 0}
     - target: {fileID: 1041620275418154781, guid: d9a21ff2621b7cb4fafc13732a9cf91a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2241,7 +2241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1041620275418154781, guid: d9a21ff2621b7cb4fafc13732a9cf91a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenOptionsMenu
+      value: ResolutionLeftButton
       objectReference: {fileID: 0}
     - target: {fileID: 1041620275418154781, guid: d9a21ff2621b7cb4fafc13732a9cf91a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2431,7 +2431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1041620275418154781, guid: d9a21ff2621b7cb4fafc13732a9cf91a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenOptionsMenu
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1041620275418154781, guid: d9a21ff2621b7cb4fafc13732a9cf91a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2560,6 +2560,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8691607122499006904, guid: d9a21ff2621b7cb4fafc13732a9cf91a, type: 3}
   m_PrefabInstance: {fileID: 1149525760}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1199890687 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8612729120977637652, guid: d9a21ff2621b7cb4fafc13732a9cf91a, type: 3}
+  m_PrefabInstance: {fileID: 1149525760}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1228820344
 GameObject:
   m_ObjectHideFlags: 0
@@ -2719,17 +2730,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f2717349d0ed834ea5dcf2153b3559c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shouldShowOption: 1
-  shouldGraphicsOptions: 1
-  shouldAudioOptions: 0
-  OptionsButton: {fileID: 629420476}
-  optionsScreen: {fileID: 2072360955}
-  levelToLoad: Pause Setup
-  graphicsLabel: {fileID: 480376577}
-  graphicsOptions: {fileID: 784046010}
-  graphicsApplyButton: {fileID: 793140649}
-  audioLabel: {fileID: 1315673454}
-  audioOptions: {fileID: 1637998117}
+  Toggles:
+    ShouldShowOption: 1
+    ShouldShowGraphicsOptions: 1
+    ShouldShowAudioOptions: 1
+    ShouldLoopResolutions: 0
+  MainMenu:
+    OptionsButton: {fileID: 629420476}
+    optionsScreen: {fileID: 2072360955}
+    levelToLoad: Pause Setup
+  OptionsMenu:
+    graphicsLabel: {fileID: 480376577}
+    graphicsOptions: {fileID: 784046010}
+    resolutionButtonText: {fileID: 1199890687}
+    graphicsApplyButton: {fileID: 793140649}
+    audioLabel: {fileID: 1315673454}
+    audioOptions: {fileID: 1637998117}
+    VSyncToggle: {fileID: 800937766}
+    FullscreenToggle: {fileID: 324568831}
+  resolutions:
+  - Width: 1920
+    Height: 1080
+  - Width: 1280
+    Height: 720
+  - Width: 854
+    Height: 480
 --- !u!4 &1309043239
 Transform:
   m_ObjectHideFlags: 0
@@ -4156,7 +4181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1041620275418154781, guid: d9a21ff2621b7cb4fafc13732a9cf91a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenOptionsMenu
+      value: CloseOptions
       objectReference: {fileID: 0}
     - target: {fileID: 1041620275418154781, guid: d9a21ff2621b7cb4fafc13732a9cf91a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -5161,7 +5186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1041620275418154781, guid: d9a21ff2621b7cb4fafc13732a9cf91a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenOptionsMenu
+      value: ResolutionRightButton
       objectReference: {fileID: 0}
     - target: {fileID: 1041620275418154781, guid: d9a21ff2621b7cb4fafc13732a9cf91a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
