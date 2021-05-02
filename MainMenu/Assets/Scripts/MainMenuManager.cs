@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -13,7 +14,6 @@ public class MainMenuManager : MonoBehaviour
         new ResolutionValues(1280, 720),
         new ResolutionValues(854, 480),
     };
-    
     private int selectedResolution;
 
     #region VariableClasses
@@ -44,6 +44,9 @@ public class MainMenuManager : MonoBehaviour
         public GameObject audioLabel = null;
         public GameObject audioOptions = null;
         public Toggle VSyncToggle, FullscreenToggle = null;
+        public AudioMixer Mixer;
+        public Slider MasterSlider, MusicSlider, SFXSlider;
+        public Text MasterLabel, MusicSliderLabel, SFXLabel;
     }
     
     [Serializable]
@@ -146,6 +149,7 @@ public class MainMenuManager : MonoBehaviour
 
     #region OptionsMenu
 
+    #region Graphics
     public void ResolutionLeftButton()
     {
         if (Toggles.ShouldLoopResolutions)
@@ -220,6 +224,27 @@ public class MainMenuManager : MonoBehaviour
                 OptionsMenu.FullscreenToggle.isOn
             );
     }
+    #endregion
+
+    #region Audio
+
+    public void SetMasterVolume()
+    {
+        OptionsMenu.MasterLabel.text = (OptionsMenu.MasterSlider.value + 80).ToString();
+        OptionsMenu.Mixer.SetFloat("MasterVolValue", OptionsMenu.MasterSlider.value);
+    }
+    public void SetMusicVolume()
+    {
+        OptionsMenu.MusicSliderLabel.text = (OptionsMenu.MusicSlider.value + 80).ToString();
+        OptionsMenu.Mixer.SetFloat("MusicVolValue", OptionsMenu.MusicSlider.value);
+    }
+    public void SetSFXVolume()
+    {
+        OptionsMenu.SFXLabel.text = (OptionsMenu.SFXSlider.value + 80).ToString();
+        OptionsMenu.Mixer.SetFloat("SFXVolValue", OptionsMenu.SFXSlider.value);
+    }
+
+    #endregion
     #endregion
 }
 

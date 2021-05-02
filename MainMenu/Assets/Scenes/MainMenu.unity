@@ -542,13 +542,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 1893554520}
   m_HandleRect: {fileID: 1489105835}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 0.5
+  m_MinValue: -80
+  m_MaxValue: 20
+  m_WholeNumbers: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1309043238}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: SetSFXVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &324568829
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,13 +727,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 1805435824}
   m_HandleRect: {fileID: 1382559099}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 0.5
+  m_MinValue: -80
+  m_MaxValue: 20
+  m_WholeNumbers: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1309043238}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: SetMasterVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &341036740
 GameObject:
   m_ObjectHideFlags: 0
@@ -2748,6 +2772,13 @@ MonoBehaviour:
     audioOptions: {fileID: 1637998117}
     VSyncToggle: {fileID: 800937766}
     FullscreenToggle: {fileID: 324568831}
+    Mixer: {fileID: 24100000, guid: 68682ad982ca3bb4eb4ef88c278b9df0, type: 2}
+    MasterSlider: {fileID: 329795665}
+    MusicSlider: {fileID: 1523927817}
+    SFXSlider: {fileID: 302880689}
+    MasterLabel: {fileID: 1539369580}
+    MusicSliderLabel: {fileID: 1728907159}
+    SFXLabel: {fileID: 376639273}
 --- !u!4 &1309043239
 Transform:
   m_ObjectHideFlags: 0
@@ -3438,13 +3469,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 1526590425}
   m_HandleRect: {fileID: 491802826}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 0.5
+  m_MinValue: -80
+  m_MaxValue: 20
+  m_WholeNumbers: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1309043238}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: SetMusicVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1526590424
 GameObject:
   m_ObjectHideFlags: 0
