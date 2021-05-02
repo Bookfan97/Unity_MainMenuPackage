@@ -68,6 +68,7 @@ public class MainMenuManager : MonoBehaviour
     {
         ShowGameObjects();
         InitializeMenus();
+        LoadVolumes();
     }
 
     private void InitializeMenus()
@@ -101,6 +102,30 @@ public class MainMenuManager : MonoBehaviour
         if (!foundResolution)
         {
             OptionsMenu.resolutionButtonText.text = Screen.width + " X " + Screen.height;
+        }
+    }
+
+    private void LoadVolumes()
+    {
+        if (PlayerPrefs.HasKey("MasterVolume"))
+        {
+            OptionsMenu.Mixer.SetFloat("MasterVolValue", PlayerPrefs.GetFloat("MasterVolume"));
+            OptionsMenu.MasterSlider.value = PlayerPrefs.GetFloat("MasterVolValue");
+            OptionsMenu.MasterLabel.text = (OptionsMenu.MasterSlider.value + 80).ToString();
+        }
+
+        if (PlayerPrefs.HasKey("MusicVolume"))
+        {
+            OptionsMenu.Mixer.SetFloat("MusicVolValue", PlayerPrefs.GetFloat("MusicVolume"));
+            OptionsMenu.MusicSlider.value = PlayerPrefs.GetFloat("MusicVolValue");
+            OptionsMenu.MusicSliderLabel.text = (OptionsMenu.MusicSlider.value + 80).ToString();
+        }
+
+        if (PlayerPrefs.HasKey("SFXVolume"))
+        {
+            OptionsMenu.Mixer.SetFloat("SFXVolValue", PlayerPrefs.GetFloat("SFXVolume"));
+            OptionsMenu.SFXSlider.value = PlayerPrefs.GetFloat("SFXVolValue");
+            OptionsMenu.SFXLabel.text = (OptionsMenu.SFXSlider.value + 80).ToString();
         }
     }
 
@@ -232,16 +257,19 @@ public class MainMenuManager : MonoBehaviour
     {
         OptionsMenu.MasterLabel.text = (OptionsMenu.MasterSlider.value + 80).ToString();
         OptionsMenu.Mixer.SetFloat("MasterVolValue", OptionsMenu.MasterSlider.value);
+        PlayerPrefs.SetFloat("MasterVolume", OptionsMenu.MasterSlider.value);
     }
     public void SetMusicVolume()
     {
         OptionsMenu.MusicSliderLabel.text = (OptionsMenu.MusicSlider.value + 80).ToString();
         OptionsMenu.Mixer.SetFloat("MusicVolValue", OptionsMenu.MusicSlider.value);
+        PlayerPrefs.SetFloat("MusicVolume", OptionsMenu.MusicSlider.value);
     }
     public void SetSFXVolume()
     {
         OptionsMenu.SFXLabel.text = (OptionsMenu.SFXSlider.value + 80).ToString();
         OptionsMenu.Mixer.SetFloat("SFXVolValue", OptionsMenu.SFXSlider.value);
+        PlayerPrefs.SetFloat("SFXVolume", OptionsMenu.SFXSlider.value);
     }
 
     #endregion
