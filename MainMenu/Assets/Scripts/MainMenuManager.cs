@@ -261,6 +261,7 @@ public class MainMenuManager : MonoBehaviour
     }
     public void SetMusicVolume()
     {
+        //OptionsMenu.MusicSlider.maxValue = 0; 
         OptionsMenu.MusicSliderLabel.text = (OptionsMenu.MusicSlider.value + 80).ToString();
         OptionsMenu.Mixer.SetFloat("MusicVolValue", OptionsMenu.MusicSlider.value);
         PlayerPrefs.SetFloat("MusicVolume", OptionsMenu.MusicSlider.value);
