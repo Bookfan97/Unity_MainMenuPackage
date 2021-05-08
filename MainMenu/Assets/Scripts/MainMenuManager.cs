@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
@@ -9,13 +10,14 @@ public class MainMenuManager : MonoBehaviour
     public ToggleClass Toggles;
     public MainMenuClass MainMenu;
     public OptionsMenuClass OptionsMenu;
+    public LoadingSceneClass LoadingScene;
     public readonly ResolutionValues[] resolutions = {
         new ResolutionValues(1920, 1080),
         new ResolutionValues(1280, 720),
         new ResolutionValues(854, 480),
     };
     private int selectedResolution;
-
+    
     #region VariableClasses
     [Serializable]
     public class ToggleClass
@@ -47,6 +49,14 @@ public class MainMenuManager : MonoBehaviour
         public AudioMixer Mixer;
         public Slider MasterSlider, MusicSlider, SFXSlider;
         public Text MasterLabel, MusicSliderLabel, SFXLabel;
+    }
+    
+    [Serializable]
+    public class LoadingSceneClass
+    {
+        public GameObject loadingScreen;
+        public Slider loadingBar;
+        public Text loadingText;
     }
     
     [Serializable]
@@ -145,9 +155,8 @@ public class MainMenuManager : MonoBehaviour
     {
         if (MainMenu.levelToLoad != "")
         {
-            SceneManager.LoadScene(MainMenu.levelToLoad);
+            StartCoroutine(LoadSceneAsync(MainMenu.levelToLoad));
         }
-        SceneManager.LoadScene(1);
     }
 
     public void OpenOptionsMenu()
@@ -274,6 +283,36 @@ public class MainMenuManager : MonoBehaviour
     }
 
     #endregion
+    #endregion
+
+    #region Loading
+    IEnumerator LoadSceneAsync(string scene)
+    {
+        LoadingScene.loadingScreen.SetActive(true);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(scene);
+        operation.allowSceneActivation = false;
+        while (!operation.isDone)
+        {
+            if (operation.progress >= 0.9f)
+            {
+                LoadingScene.loadingText.text = "Press any key to continue...";
+                LoadingScene.loadingBar.value = 1.0f;
+                if (Input.anyKeyDown)
+                {
+                    operation.allowSceneActivation = true;
+                    Time.timeScale = 1.0f;
+                }
+            }
+            else
+            {
+                float progress = Mathf.Clamp01(operation.progress / 0.9f);
+                LoadingScene.loadingBar.value = progress;
+            }
+            yield return null;
+        }
+    }
+    
+
     #endregion
 }
 
