@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor.Animations;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -27,7 +28,7 @@ public class PauseMenuManger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
         {
             PauseUnPause();
         }

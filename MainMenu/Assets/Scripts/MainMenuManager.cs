@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -297,7 +298,7 @@ public class MainMenuManager : MonoBehaviour
             {
                 LoadingScene.loadingText.text = "Press any key to continue...";
                 LoadingScene.loadingBar.value = 1.0f;
-                if (Input.anyKeyDown)
+                if (Keyboard.current.anyKey.wasPressedThisFrame)
                 {
                     operation.allowSceneActivation = true;
                     Time.timeScale = 1.0f;
