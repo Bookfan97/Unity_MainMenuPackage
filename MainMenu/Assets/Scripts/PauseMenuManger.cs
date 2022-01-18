@@ -78,7 +78,7 @@ public class PauseMenuManger : MonoBehaviour
             {
                 loadingText.text = "Press any key to continue...";
                 loadingBar.value = 1.0f;
-                if (Input.anyKeyDown)
+                if (Keyboard.current.anyKey.wasPressedThisFrame)
                 {
                     operation.allowSceneActivation = true;
                     Time.timeScale = 1.0f;

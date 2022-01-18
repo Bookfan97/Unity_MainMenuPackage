@@ -24,8 +24,6 @@ public class MainMenuManager : MonoBehaviour
     public class ToggleClass
     {
         public bool ShouldShowOption = true;
-        public bool ShouldShowGraphicsOptions = true;
-        public bool ShouldShowAudioOptions = true;
         public bool ShouldLoopResolutions = true;
     }
 
@@ -143,11 +141,6 @@ public class MainMenuManager : MonoBehaviour
     private void ShowGameObjects()
     {
         MainMenu.OptionsButton.SetActive(Toggles.ShouldShowOption);
-        OptionsMenu.graphicsLabel.SetActive(Toggles.ShouldShowGraphicsOptions);
-        OptionsMenu.graphicsOptions.SetActive(Toggles.ShouldShowGraphicsOptions);
-        OptionsMenu.graphicsApplyButton.SetActive(Toggles.ShouldShowGraphicsOptions);
-        OptionsMenu.audioLabel.SetActive(Toggles.ShouldShowAudioOptions);
-        OptionsMenu.audioOptions.SetActive(Toggles.ShouldShowAudioOptions);
     }
     #endregion
 
