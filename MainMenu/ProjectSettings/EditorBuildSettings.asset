@@ -12,4 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Pause Setup.unity
     guid: d18591eb04466fd428794a14431f387f
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 8f4d9ddc43fec964ca31871363133252, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 38dc4025c8dcb3f42b0452d1180534d7, type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: f3b0eed10a5c5cf4991ca6e78239b0f0, type: 2}

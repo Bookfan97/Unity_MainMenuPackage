@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Options Menu Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Options Menu
+  m_TableCollectionNameGuidString: 4c10f830565898f4ea1249d0aeab76ad
+  m_Entries:
+  - m_Id: 34358747136
+    m_Key: option_menu_title_audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71365091328
+    m_Key: option_menu_title_controls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90646306816
+    m_Key: option_menu_title_graphics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 308162912256
+    m_Key: option_menu_audio_master_volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 349007044608
+    m_Key: option_menu_audio_music_volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 379461885952
+    m_Key: option_menu_audio_sfx_volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1254045573120
+    m_Key: option_menu_graphics_fullscreen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1363009396736
+    m_Key: option_menu_graphics_vsync
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1384635228160
+    m_Key: option_menu_graphics_resolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1416935563264
+    m_Key: option_menu_graphics_applysettings
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 8427195205389910079
+  references:
+    version: 2
+    RefIds:
+    - rid: 8427195205389910079
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1642549717773

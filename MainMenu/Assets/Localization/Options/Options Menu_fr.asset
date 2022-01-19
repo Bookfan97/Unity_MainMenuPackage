@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Options Menu_fr
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: fr
+  m_SharedData: {fileID: 11400000, guid: 4c10f830565898f4ea1249d0aeab76ad, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 34358747136
+    m_Localized: l'audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71365091328
+    m_Localized: "Contr\xF4les"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90646306816
+    m_Localized: Graphique
+    m_Metadata:
+      m_Items: []
+  - m_Id: 308162912256
+    m_Localized: VOLUME PRINCIPAL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 349007044608
+    m_Localized: VOLUME DE LA MUSIQUE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 379461885952
+    m_Localized: VOLUME DES EFFETS SONORES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1363009396736
+    m_Localized: "\rVSYNC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1384635228160
+    m_Localized: "R\xC9SOLUTION D'\xC9CRAN"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1416935563264
+    m_Localized: "APPLIQUER LES PARAM\xC8TRES"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1254045573120
+    m_Localized: "PLEIN \xC9CRAN"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
